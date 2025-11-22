@@ -176,7 +176,7 @@ export const Tooltip = ({
           >
             <div
               ref={contentRef}
-              className="p-2 text-sm text-neutral-600 md:p-4 dark:text-neutral-400"
+              className="p-2 text-sm text-neutral-600 md:p-4 dark:text-neutral-400 leading-relaxed [&_img]:max-w-[300px] [&_img]:h-auto [&_img]:bg-transparent [&_img]:block [&_img]:relative [&_img]:z-10 [&_img]:mb-0 [&_span]:!opacity-100 [&_span>img]:!opacity-100 [&>p]:mb-2 [&>p]:last:mb-0 [&>p]:leading-relaxed [&>*+*]:mt-2"
             >
               {content}
             </div>

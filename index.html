@@ -1,7 +1,22 @@
 <!doctype html>
-<html lang="en" class="dark">
+<html lang="en" class="">
 
 <head>
+  <script>
+    const media = window.matchMedia('(prefers-color-scheme: dark)');
+
+    function applyTheme(e) {
+      if (e.matches) {
+        document.documentElement.classList.add('dark');
+      } else {
+        document.documentElement.classList.remove('dark');
+      }
+    }
+
+    applyTheme(media);
+
+    media.addEventListener('change', applyTheme);
+  </script>
   <meta charset="UTF-8" />
   <link rel="icon" type="image/svg+xml" href="/vite.svg" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -11,6 +26,7 @@
 <body>
   <div id="root"></div>
   <script type="module" src="/src/main.tsx"></script>
+
 </body>
 
 </html>
