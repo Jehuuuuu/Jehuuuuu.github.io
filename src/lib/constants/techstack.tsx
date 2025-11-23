@@ -6,6 +6,14 @@ import { FaCss3Alt, FaGitAlt, FaHtml5, FaPython, FaReact } from "react-icons/fa6
 export const techStackItems =
   [
     {
+      icon: <FaHtml5 size={50} />,
+      title: "HTML"
+    },
+    {
+      icon: <FaCss3Alt size={50} />,
+      title: "CSS"
+    },
+    {
       icon: <SiJavascript size={50} />,
       title: "JavaScript"
     },
@@ -20,14 +28,6 @@ export const techStackItems =
     {
       icon: <RiNextjsFill size={50} />,
       title: "Nextjs"
-    },
-    {
-      icon: <FaHtml5 size={50} />,
-      title: "HTML"
-    },
-    {
-      icon: <FaCss3Alt size={50} />,
-      title: "CSS"
     },
     {
       icon: <FaPython size={50} />,

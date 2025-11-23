@@ -1,4 +1,4 @@
-import { InfiniteMovingCards } from "../ui/infinite-moving-cards";
+import { InfiniteMovingCards } from "@/components/ui/infinite-moving-cards";
 import { techStackItems } from "@/lib/constants/techstack";
 
 export default function Banner() {
@@ -6,7 +6,7 @@ export default function Banner() {
     <div>
       <InfiniteMovingCards items={techStackItems}
         direction="left"
-        speed="slow"
+        speed="normal"
       />
 
     </div>

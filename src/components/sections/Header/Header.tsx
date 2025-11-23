@@ -1,10 +1,10 @@
 import type { ReactElement } from "react"
 import Banner from "./Banner"
 import { FaFilePdf, FaGithub, FaSquareXTwitter } from "react-icons/fa6"
-import Reveal from "../ui/reveal"
-import { Tooltip } from "../ui/tooltip-card"
 import { FaFacebookSquare } from "react-icons/fa"
 import { MdEmail } from "react-icons/md"
+import { Tooltip } from "@/components/ui/tooltip-card"
+import Reveal from "@/components/ui/reveal"
 
 interface HeaderProfileProps {
   name: string,

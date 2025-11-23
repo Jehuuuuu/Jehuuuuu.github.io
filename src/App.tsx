@@ -1,5 +1,5 @@
-
-import HeaderSection from "./components/sections/Header";
+import Experience from "./components/sections/Experience/Experience";
+import HeaderSection from "./components/sections/Header/Header";
 
 export default function App() {
   return (
@@ -11,7 +11,7 @@ export default function App() {
         email: "jehurodriguez143@gmail.com",
         resume: "jehu-resume.pdf"
       }} />
-
+      <Experience />
     </div>
   );
 }
