@@ -7,7 +7,7 @@ export default function Timeline({ experience }: ExperienceProps) {
     <Card className="px-4 max-w-[100vw]">
       <CardContent>
         {experience.map((exp, index) => (
-          <div className="border-l-4 px-14 py-2 relative" key={index}>
+          <div className="border-l-4 pl-10 md:pl-14 py-2 relative" key={index}>
             {/* <div className="w-15 h-15 rounded-full absolute -left-8 border p-0.5 overflow-hidden bg-background"><img src={exp?.logo} alt={exp.name} className="rounded-full object-cover" /></div> */}
             <div className="w-15 h-15 rounded-full absolute -left-8 border p-0.5 overflow-hidden bg-background">
               <a href={exp?.href} target="_blank">
@@ -17,14 +17,14 @@ export default function Timeline({ experience }: ExperienceProps) {
                 </Avatar>
               </a>
             </div>
-            <span className="text-muted-foreground text-sm">{exp.start} - {exp?.end}</span>
-            <p className="font-bold">{exp.name}</p>
-            <span className="text-muted-foreground">{exp.title}</span>
+            <span className="text-muted-foreground text-xs md:text-sm">{exp.start} - {exp?.end ? exp.end : "Present"}</span>
+            <h2 className="font-bold md:text-lg">{exp.name}</h2>
+            <span className="text-muted-foreground text-sm md:text-base">{exp.title}</span>
             {exp.description.map((desc, index) => (
               <div key={index}>
                 <ul className="list-disc">
                   <li className="p-2 ml-4">
-                    {desc}
+                    <p className="text-sm md:text-base">{desc}</p>
                   </li>
                 </ul>
               </div>

@@ -7,8 +7,8 @@ export default function Experience() {
   return (
     <Reveal><Tabs defaultValue="work" className="space-y-2">
       <TabsList className="w-full h-15 grid grid-cols-2 gap-2">
-        <TabsTrigger value="work">Work</TabsTrigger>
-        <TabsTrigger value="education">Education</TabsTrigger>
+        <TabsTrigger value="work" className="text-md cursor-pointer" >Work</TabsTrigger>
+        <TabsTrigger value="education" className="text-md cursor-pointer">Education</TabsTrigger>
       </TabsList>
 
       <TabsContent value="work">
