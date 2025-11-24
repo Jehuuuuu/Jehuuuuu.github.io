@@ -1,5 +1,6 @@
 import Experience from "./components/sections/Experience/Experience";
 import HeaderSection from "./components/sections/Header/Header";
+import { ProjectCard } from "./components/sections/Projects/ProjectCard";
 
 export default function App() {
   return (
@@ -12,6 +13,7 @@ export default function App() {
         resume: "jehu-resume.pdf"
       }} />
       <Experience />
+      <ProjectCard />
     </div>
   );
 }
