@@ -7,10 +7,10 @@ export const cards = [
     src: "/hufano-handicraft.png",
     ctaText: "Visit",
     ctaLink: "https://woodcraft-frontend.vercel.app/",
-    sourceLink: "https://github.com/Jehuuuuu/woodcraft-frontend",
+    sourceLink: "https://github.com/Jehuuuuu/woodcraft-backend",
     sourceLinkText: "Source",
     sourceLinkIcon: <FaGithub size={15} />,
-    sourceUi: "https://github.com/Jehuuuuu/woodcraft-backend",
+    sourceUi: "https://github.com/Jehuuuuu/woodcraft-frontend",
     sourceUiIcon: <FaGithub size={15} />,
     sourceUiText: "Source(UI)",
     content: () => {
