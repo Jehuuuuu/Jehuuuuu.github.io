@@ -43,7 +43,7 @@ export default function HeaderSection({ name, profileImage, age, title, links }:
       <Reveal className="flex flex-col items-center justify-center mt-20 gap-2 py-2">
         <p className="font-bold text-4xl">{name}</p>
         <p className="text-sm" >{age} <Tooltip content={<p className="text-nowrap" >Imus, Cavite, Philippines</p>}>🇵🇭 </Tooltip>
-          {" "} • {title} • Python & JavaScript</p>
+          {" "} • {title} </p>
 
         <div className="flex items-center space-x-2">
           <Tooltip content={
