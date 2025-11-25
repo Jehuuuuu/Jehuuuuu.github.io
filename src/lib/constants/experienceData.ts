@@ -8,7 +8,7 @@ export const experienceData = {
       name: "Freelance Project — Capstone System",
       title: "Freelance Software Engineer",
       description: [
-        "Developed a capstone project system for a university student client, including core features and functionality.",
+        "Designed and developed a capstone project system for a university student client, including core features and functionality.",
         "Created supporting documentation assets such as ERD, DFD, use case diagrams, and interview questions through direct requirement gathering.",
       ],
     },
