@@ -35,7 +35,7 @@ export const experienceData = {
       title: "BS in Information Technology",
       description: [
         "Graduated with latin honors(cum laude)",
-        "Finished with a 1.60 GPA"
+        // "Finished with a 1.60 GPA"
       ],
     }
   ]

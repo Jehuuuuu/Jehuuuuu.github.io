@@ -1,10 +1,18 @@
+import { FaGithub } from "react-icons/fa6";
+
 export const cards = [
   {
     description: "React | Next.js | Django | Django Ninja",
     title: "E- Commerce Web Application for Hufano Handicraft Wooden Decors",
     src: "/hufano-handicraft.png",
     ctaText: "Visit",
-    ctaLink: "https://ui.aceternity.com/templates",
+    ctaLink: "https://woodcraft-frontend.vercel.app/",
+    sourceLink: "https://github.com/Jehuuuuu/woodcraft-frontend",
+    sourceLinkText: "Source",
+    sourceLinkIcon: <FaGithub size={15} />,
+    sourceUi: "https://github.com/Jehuuuuu/woodcraft-backend",
+    sourceUiIcon: <FaGithub size={15} />,
+    sourceUiText: "Source(UI)",
     content: () => {
       return (
         <p>
@@ -19,7 +27,10 @@ export const cards = [
     title: "Feedback and Evaluation System with Sentiment Analysis ",
     src: "/feedback-system.png",
     ctaText: "Visit",
-    ctaLink: "https://ui.aceternity.com/templates",
+    ctaLink: "https://github.com/Jehuuuuu/Feedback-and-Evaluation-System-Capstone-Project",
+    sourceLink: "https://github.com/Jehuuuuu/Feedback-and-Evaluation-System-Capstone-Project",
+    sourceLinkText: "Source",
+    sourceLinkIcon: <FaGithub size={15} />,
     content: () => {
       return (
         <p>

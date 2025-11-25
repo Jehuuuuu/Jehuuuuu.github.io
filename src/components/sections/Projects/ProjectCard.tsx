@@ -109,7 +109,7 @@ export function ProjectCard() {
                     exit={{ opacity: 0 }}
                     href={active.ctaLink}
                     target="_blank"
-                    className="px-4 py-3 text-sm rounded-full font-bold bg-green-500 text-white"
+                    className="px-4 py-3 text-sm rounded-full font-bold bg-black text-white dark:bg-white dark:text-black"
                   >
                     {active.ctaText}
                   </motion.a>
@@ -120,17 +120,48 @@ export function ProjectCard() {
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     exit={{ opacity: 0 }}
-                    className="text-neutral-600 text-xs md:text-sm lg:text-base h-40 md:h-fit pb-10 flex flex-col items-start gap-4 overflow-auto dark:text-neutral-400 [mask:linear-gradient(to_bottom,white,white,transparent)] [scrollbar-width:none] [-ms-overflow-style:none] [-webkit-overflow-scrolling:touch]"
+                    className="text-neutral-600 md:text-sm lg:text-base h-40 md:h-fit pb-10 flex flex-col items-start gap-4 overflow-auto dark:text-neutral-400 [mask:linear-gradient(to_bottom,white,white,transparent)] [scrollbar-width:none] [-ms-overflow-style:none] [-webkit-overflow-scrolling:touch]"
                   >
                     {typeof active.content === "function"
                       ? active.content()
                       : active.content}
                   </motion.div>
+                  <div className="flex gap-2 items-center mb-4">
+                    {active.sourceLink && (
+                      <motion.a
+                        layout
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                        href={active.sourceLink}
+                        target="_blank"
+                        className="px-4 py-3 text-sm rounded-full font-bold bg-black text-white dark:bg-white dark:text-black flex items-center justify-center gap-2"
+                      >
+                        {active.sourceLinkIcon}
+                        {active.sourceLinkText}
+                      </motion.a>
+                    )}
+                    {active.sourceUi && (
+                      <motion.a
+                        layout
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                        href={active.sourceUi}
+                        target="_blank"
+                        className="px-4 py-3 text-sm rounded-full font-bold bg-black text-white dark:bg-white dark:text-black  flex items-center justify-center gap-2"
+                      >
+                        {active.sourceUiIcon}
+                        {active.sourceUiText}
+                      </motion.a>
+                    )}
+                  </div>
                 </div>
               </div>
             </motion.div>
           </div>
         ) : null}
+
       </AnimatePresence>
 
       <Reveal><ul className="max-w-2xl mx-auto w-full grid grid-cols-1 md:grid-cols-2 items-start gap-4">
