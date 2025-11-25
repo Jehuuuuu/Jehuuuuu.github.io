@@ -5,9 +5,9 @@ import React, {
   useState,
   useEffect,
   useRef,
-  RefObject,
   useCallback,
 } from "react";
+import type { RefObject } from "react";
 
 interface StarProps {
   x: number;
@@ -18,7 +18,7 @@ interface StarProps {
 }
 
 interface StarBackgroundProps {
-  starDensity
+  starDensity?: number,
   allStarsTwinkle?: boolean;
   twinkleProbability?: number;
   minTwinkleSpeed?: number;
@@ -35,7 +35,7 @@ export const StarsBackground: React.FC<StarBackgroundProps> = ({
   className,
 }) => {
   const [stars, setStars] = useState<StarProps[]>([]);
-  const canvasRef: RefObject<HTMLCanvasElement> =
+  const canvasRef: RefObject<HTMLCanvasElement | null> =
     useRef<HTMLCanvasElement>(null);
 
   const generateStars = useCallback(
