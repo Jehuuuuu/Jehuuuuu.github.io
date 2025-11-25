@@ -5,6 +5,7 @@ import { FaFacebookSquare } from "react-icons/fa"
 import { MdEmail } from "react-icons/md"
 import { Tooltip } from "@/components/ui/tooltip-card"
 import Reveal from "@/components/ui/reveal"
+import type { SocialLinksProps } from "@/lib/constants/socialLinks"
 
 interface HeaderProfileProps {
   name: string,
@@ -12,14 +13,7 @@ interface HeaderProfileProps {
   bannerImage: string,
   age: number,
   title: string,
-  links?: {
-    github?: string,
-    facebook?: string,
-    twitter?: string,
-    linkedin?: string,
-    resume?: string,
-    email?: string
-  }
+  links?: SocialLinksProps
 }
 
 
