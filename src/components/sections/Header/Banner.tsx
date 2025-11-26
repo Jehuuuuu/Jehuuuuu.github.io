@@ -6,7 +6,7 @@ export default function Banner() {
     <div>
       <InfiniteMovingCards items={techStackItems}
         direction="left"
-        speed="normal"
+        speed="fast"
       />
 
     </div>
