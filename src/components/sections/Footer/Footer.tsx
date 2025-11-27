@@ -11,7 +11,7 @@ export default function Footer({ links }: { links: SocialLinksProps }) {
       <div className="flex flex-col md:flex-row items-center gap-2 pt-2 pb-4">
         <div className="flex items-center gap-2">
           <Tooltip content={
-            <img src="/tooltip-github.png" alt="github profile" className="max-w-full h-auto" />
+            <img src="/tooltip-github.png" alt="Visit Jehu Rodriguez's Github Profile " className="max-w-full h-auto" />
           }
           >
             <a
@@ -31,7 +31,7 @@ export default function Footer({ links }: { links: SocialLinksProps }) {
           </Tooltip>
 
           <Tooltip content={
-            <img src="/tooltip-x.png" alt="twitter profile" className="max-w-full h-auto" />
+            <img src="/tooltip-x.png" alt="Visit Jehu Rodriguez's X Account" className="max-w-full h-auto" />
           }
           >
             <a
@@ -50,7 +50,7 @@ export default function Footer({ links }: { links: SocialLinksProps }) {
             </a>
           </Tooltip>
           <Tooltip content={
-            <img src="/tooltip-facebook.png" alt="facebook profile" className="rounded-sm max-w-full h-auto" />
+            <img src="/tooltip-facebook.png" alt="Visit Jehu Rodriguez's Facebook Account" className="rounded-sm max-w-full h-auto" />
           }
           >
             <a

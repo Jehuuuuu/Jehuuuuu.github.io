@@ -29,7 +29,7 @@ export default function HeaderSection({ name, profileImage, age, title, links }:
           <img
             src={profileImage}
             className="object-cover object-[50%_25%] w-35 h-35 md:w-40 md:h-40 rounded-full"
-            alt="profile-picture"
+            alt="Jehu Rodriguez Software Developer"
           />
         </div>
       </Reveal>
@@ -41,7 +41,7 @@ export default function HeaderSection({ name, profileImage, age, title, links }:
 
         <div className="flex items-center space-x-2">
           <Tooltip content={
-            <img src="/tooltip-resume.jpg" alt="resume picture" className="max-w-full h-auto" />
+            <img src="/tooltip-resume.jpg" alt="Resume file of Jehu Rodriguez" className="max-w-full h-auto" />
           }
           >
             <a
@@ -60,7 +60,7 @@ export default function HeaderSection({ name, profileImage, age, title, links }:
             </a>
           </Tooltip>
           <Tooltip content={
-            <img src="/tooltip-github.png" alt="github profile" className="max-w-full h-auto" />
+            <img src="/tooltip-github.png" alt="Visit Jehu Rodriguez's Github Profile " className="max-w-full h-auto" />
           }
           >
             <a
@@ -80,7 +80,7 @@ export default function HeaderSection({ name, profileImage, age, title, links }:
           </Tooltip>
 
           <Tooltip content={
-            <img src="/tooltip-x.png" alt="twitter profile" className="max-w-full h-auto" />
+            <img src="/tooltip-x.png" alt="Visit Jehu Rodriguez's X Account" className="max-w-full h-auto" />
           }
           >
             <a
@@ -99,7 +99,7 @@ export default function HeaderSection({ name, profileImage, age, title, links }:
             </a>
           </Tooltip>
           <Tooltip content={
-            <img src="/tooltip-facebook.png" alt="facebook profile" className="rounded-sm max-w-full h-auto" />
+            <img src="/tooltip-facebook.png" alt="Visit Jehu Rodriguez's Facebook Account" className="rounded-sm max-w-full h-auto" />
           }
           >
             <a

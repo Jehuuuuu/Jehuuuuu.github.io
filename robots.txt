@@ -1,0 +1,5 @@
+
+User-agent: *
+Allow: /
+
+Sitemap: https://jehu-rodriguez.github.io/sitemap.xml

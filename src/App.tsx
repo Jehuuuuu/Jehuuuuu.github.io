@@ -7,7 +7,7 @@ import { socialLinks } from "./lib/constants/socialLinks";
 export default function App() {
   return (
     <div className="px-2 max-w-2xl space-y-2 mx-auto">
-      <HeaderSection bannerImage="/banner.jpeg" name={"Jehu Rodriguez"} profileImage={"/gradpic.jpg"} age={22} title={"Full Stack Web Developer & Software Engineer"} links={socialLinks} />
+      <HeaderSection bannerImage="/banner.jpeg" name={"Jehu Rodriguez"} profileImage={"/gradpic.jpg"} age={22} title={"Python & JavaScript Developer specializing in React, Django, and modern web development."} links={socialLinks} />
       <Experience />
       <ProjectCard />
       <Footer links={socialLinks} />
