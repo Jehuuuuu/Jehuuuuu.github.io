@@ -65,7 +65,7 @@ export function ProjectCard() {
                   duration: 0.05,
                 },
               }}
-              className="flex absolute top-2 right-2 lg:hidden items-center justify-center bg-white rounded-full h-6 w-6"
+              className="close-btn flex absolute top-2 right-2 lg:hidden items-center justify-center rounded-full h-6 w-6"
               onClick={() => setActive(null)}
             >
               <CloseIcon />
@@ -73,7 +73,7 @@ export function ProjectCard() {
             <motion.div
               layoutId={`card-${active.title}-${id}`}
               ref={ref}
-              className="w-screen max-w-[500px] h-screen flex flex-col bg-white dark:bg-neutral-900 sm:rounded-3xl md:h-[95vh] overflow-hidden"
+              className="project-modal-card w-screen max-w-[500px] h-screen flex flex-col sm:rounded-3xl md:h-[95vh] overflow-hidden"
             >
               <motion.div layoutId={`image-${active.title}-${id}`}>
                 <img
@@ -81,7 +81,7 @@ export function ProjectCard() {
                   height={200}
                   src={active.src}
                   alt={active.title}
-                  className="w-full h-60 md:h-70 lg:h-70 sm:rounded-tr-lg sm:rounded-tl-lg object-cover object-top"
+                  className="project-modal-img w-full h-60 md:h-70 lg:h-70 sm:rounded-tr-lg sm:rounded-tl-lg object-cover object-top"
                 />
               </motion.div>
 
@@ -90,13 +90,13 @@ export function ProjectCard() {
                   <div className="">
                     <motion.h3
                       layoutId={`title-${active.title}-${id}`}
-                      className="font-medium text-neutral-700 dark:text-neutral-200 text-base"
+                      className="project-modal-title font-medium text-base"
                     >
                       {active.title}
                     </motion.h3>
                     <motion.p
                       layoutId={`description-${active.description}-${id}`}
-                      className="text-neutral-600 dark:text-neutral-400 text-base"
+                      className="project-modal-desc text-base"
                     >
                       {active.description}
                     </motion.p>
@@ -109,7 +109,7 @@ export function ProjectCard() {
                     exit={{ opacity: 0 }}
                     href={active.ctaLink}
                     target="_blank"
-                    className="px-4 py-3 text-sm rounded-full font-bold bg-black text-white dark:bg-white dark:text-black"
+                    className="project-modal-cta px-4 py-3 text-sm rounded-full font-bold"
                   >
                     {active.ctaText}
                   </motion.a>
@@ -121,12 +121,13 @@ export function ProjectCard() {
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     exit={{ opacity: 0 }}
-                    className="text-neutral-600 lg:text-base max-h-30 md:h-fit flex flex-col items-start gap-4 overflow-auto dark:text-neutral-400 [scrollbar-width:none] [-ms-overflow-style:none] [-webkit-overflow-scrolling:touch]"
+                    className="project-modal-content text-neutral-600 lg:text-base max-h-30 md:h-fit flex flex-col items-start gap-4 overflow-auto [scrollbar-width:none] [-ms-overflow-style:none] [-webkit-overflow-scrolling:touch]"
                   >
                     {typeof active.content === "function"
                       ? active.content()
                       : active.content}
-                  </motion.div> <div className="flex gap-2 items-center py-2">
+                  </motion.div>{" "}
+                  <div className="flex gap-2 items-center py-2">
                     {active.sourceLink && (
                       <motion.a
                         layout
@@ -135,7 +136,7 @@ export function ProjectCard() {
                         exit={{ opacity: 0 }}
                         href={active.sourceLink}
                         target="_blank"
-                        className="px-4 py-3 text-sm rounded-full font-bold bg-black text-white dark:bg-white dark:text-black flex items-center justify-center gap-2"
+                        className="project-modal-source px-4 py-3 text-sm rounded-full font-bold flex items-center justify-center gap-2"
                       >
                         {active.sourceLinkIcon}
                         {active.sourceLinkText}
@@ -149,58 +150,58 @@ export function ProjectCard() {
                         exit={{ opacity: 0 }}
                         href={active.sourceUi}
                         target="_blank"
-                        className="px-4 py-3 text-sm rounded-full font-bold bg-black text-white dark:bg-white dark:text-black  flex items-center justify-center gap-2"
+                        className="project-modal-ui px-4 py-3 text-sm rounded-full font-bold flex items-center justify-center gap-2"
                       >
                         {active.sourceUiIcon}
                         {active.sourceUiText}
                       </motion.a>
                     )}
                   </div>
-
                 </div>
               </div>
             </motion.div>
           </div>
         ) : null}
-
       </AnimatePresence>
 
-      <Reveal><ul className="max-w-2xl mx-auto w-full grid grid-cols-1 md:grid-cols-2 items-start gap-4">
-        {cards.map((card, index) => (
-          <motion.div
-            layoutId={`card-${card.title}-${id}`}
-            key={index}
-            onClick={() => setActive(card)}
-            className="p-4 flex flex-col  hover:bg-neutral-50 dark:hover:bg-neutral-800 rounded-xl cursor-pointer"
-          >
-            <div className="flex gap-4 flex-col  w-full">
-              <motion.div layoutId={`image-${card.title}-${id}`}>
-                <img
-                  width={100}
-                  height={100}
-                  src={card.src}
-                  alt={card.title}
-                  className="h-60 w-full  rounded-lg object-cover object-top"
-                />
-              </motion.div>
-              <div className="flex justify-center items-center flex-col">
-                <motion.h3
-                  layoutId={`title-${card.title}-${id}`}
-                  className="font-medium text-neutral-800 dark:text-neutral-200 text-center md:text-left text-base"
-                >
-                  {card.title}
-                </motion.h3>
-                <motion.p
-                  layoutId={`description-${card.description}-${id}`}
-                  className="text-neutral-600 dark:text-neutral-400 text-center md:text-left text-base"
-                >
-                  {card.description}
-                </motion.p>
+      <Reveal>
+        <ul className="max-w-2xl mx-auto w-full grid grid-cols-1 md:grid-cols-2 items-start gap-4">
+          {cards.map((card, index) => (
+            <motion.div
+              layoutId={`card-${card.title}-${id}`}
+              key={index}
+              onClick={() => setActive(card)}
+              className="project-card p-4 flex flex-col rounded-xl cursor-pointer hover:bg-neutral-50 dark:hover:bg-neutral-800"
+            >
+              <div className="flex gap-4 flex-col  w-full">
+                <motion.div layoutId={`image-${card.title}-${id}`}>
+                  <img
+                    width={100}
+                    height={100}
+                    src={card.src}
+                    alt={card.title}
+                    className="project-card-img h-60 w-full  rounded-lg object-cover object-top"
+                  />
+                </motion.div>
+                <div className="flex justify-center items-center flex-col">
+                  <motion.h3
+                    layoutId={`title-${card.title}-${id}`}
+                    className="project-card-title font-medium text-center md:text-left text-base"
+                  >
+                    {card.title}
+                  </motion.h3>
+                  <motion.p
+                    layoutId={`description-${card.description}-${id}`}
+                    className="project-card-desc text-center md:text-left text-base"
+                  >
+                    {card.description}
+                  </motion.p>
+                </div>
               </div>
-            </div>
-          </motion.div>
-        ))}
-      </ul></Reveal>
+            </motion.div>
+          ))}
+        </ul>
+      </Reveal>
     </>
   );
 }
@@ -237,4 +238,3 @@ export const CloseIcon = () => {
     </motion.svg>
   );
 };
-

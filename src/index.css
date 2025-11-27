@@ -159,7 +159,7 @@
   --shadow-xl: var(--shadow-xl);
   --shadow-2xl: var(--shadow-2xl);
  --animate-scroll: scroll var(--animation-duration, 40s) var(--animation-direction, forwards) linear infinite;
- 
+
   @keyframes scroll {
     to {
       transform: translate(calc(-50% - 0.5rem));
@@ -182,40 +182,85 @@ body {
   color: var(--foreground);
 }
 
-/* h1 { */
-/*   font-size: 3.2em; */
-/*   line-height: 1.1; */
-/* } */
-/**/
-/* button { */
-/*   border-radius: 8px; */
-/*   border: 1px solid transparent; */
-/*   padding: 0.6em 1.2em; */
-/*   font-size: 1em; */
-/*   font-weight: 500; */
-/*   font-family: inherit; */
-/*   /* background-color: #1a1a1a; */ */
-/*   cursor: pointer; */
-/*   transition: border-color 0.25s; */
-/* } */
-/* button:hover { */
-/*   /* border-color: #646cff; */ */
-/*   cursor: pointer */
-/* } */
-/* button:focus, */
-/* button:focus-visible { */
-/*   outline: 4px auto -webkit-focus-ring-color; */
-/* } */
+::view-transition-old(root), ::view-transition-new(root) {
+    animation: none;
+    mix-blend-mode: normal;
+}
+button:hover{
+ cursor:pointer;
+}
+.resume-btn {
+  @apply bg-black text-white;
+}
 
-/* @media (prefers-color-scheme: light) { */
-/*   :root { */
-/*     color: #000000; */
-/*     background-color: #ffffff; */
-/*   } */
-/*   /* button { */
-/*     background-color: #f9f9f9; */
-/*   } */ */
-/* } */
-/**/
-/**/
+.dark .resume-btn {
+  @apply bg-white text-black;
+}
 
+.project-modal-card { @apply bg-white; }
+.dark .project-modal-card { @apply bg-neutral-900; }
+
+.project-modal-title { @apply text-neutral-700; }
+.dark .project-modal-title { @apply text-neutral-200; }
+
+.project-modal-desc { @apply text-neutral-600; }
+.dark .project-modal-desc { @apply text-neutral-400; }
+
+.project-modal-cta { @apply bg-black text-white; }
+.dark .project-modal-cta { @apply bg-white text-black; }
+
+.project-modal-content { @apply text-neutral-600; }
+.dark .project-modal-content { @apply text-neutral-400; }
+
+.project-modal-source { @apply bg-black text-white; }
+.dark .project-modal-source { @apply bg-white text-black; }
+
+.project-modal-ui { @apply bg-black text-white; }
+.dark .project-modal-ui { @apply bg-white text-black; }
+
+.close-btn { @apply bg-white; }
+.dark .close-btn { @apply bg-neutral-900; }
+
+/* Card styles */
+.project-card { /* hover:bg-neutral-50 dark:hover:bg-neutral-800 handled below */ }
+.project-card:hover { @apply bg-neutral-50; }
+.dark .project-card:hover { @apply bg-neutral-800; }
+
+.project-card-img { /* No color classes to extract */ }
+
+.project-card-title { @apply text-neutral-800; }
+.dark .project-card-title { @apply text-neutral-200; }
+
+.project-card-desc { @apply text-neutral-600; }
+.dark .project-card-desc { @apply text-neutral-400; }
+
+.tabs-list-theme {
+  @apply bg-muted text-muted-foreground;
+}
+
+.tabs-trigger-theme {
+  @apply data-[state=active]:bg-background text-foreground;
+  @apply focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:outline-ring;
+}
+/* .dark .tabs-trigger-theme { */
+/*   @apply dark:data-[state=active]:text-foreground dark:data-[state=active]:border-input dark:data-[state=active]:bg-input/30 dark:text-muted-foreground; */
+/* } */
+.imc-icon-theme {
+  @apply text-neutral-800;
+}
+.dark .imc-icon-theme {
+  @apply text-gray-100;
+}
+
+.imc-title-theme {
+  @apply text-neutral-500;
+}
+.dark .imc-title-theme {
+  @apply text-gray-400;
+}
+.stars-bg-canvas {
+  --star-color: 0,0,0;
+}
+.dark .stars-bg-canvas {
+  --star-color: 255,255,255;
+}

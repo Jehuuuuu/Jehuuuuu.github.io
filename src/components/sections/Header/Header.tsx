@@ -6,6 +6,7 @@ import { MdEmail } from "react-icons/md"
 import { Tooltip } from "@/components/ui/tooltip-card"
 import Reveal from "@/components/ui/reveal"
 import type { SocialLinksProps } from "@/lib/constants/socialLinks"
+import { AnimatedThemeToggler } from "@/components/ui/animated-theme-toggler"
 
 interface HeaderProfileProps {
   name: string,
@@ -35,7 +36,7 @@ export default function HeaderSection({ name, profileImage, age, title, links }:
       </Reveal>
 
       <Reveal className="flex flex-col items-center justify-center mt-20 gap-2 py-2">
-        <h1 className="font-bold text-4xl">{name}</h1>
+        <div className="flex gap-2 items-center justify-center"><h1 className="font-bold text-4xl">{name}</h1> <AnimatedThemeToggler /></div>
         <div className="flex flex-col items-center justify-center"><p className="text-sm">{age} <Tooltip content={<p className="text-nowrap" >Imus, Cavite, Philippines</p>}>🇵🇭 </Tooltip></p>
           <p className="text-center">{title}</p> </div>
 
@@ -56,7 +57,7 @@ export default function HeaderSection({ name, profileImage, age, title, links }:
                 userSelect: 'none'
               }}
             >
-              <button className="flex items-center gap-2 bg-black text-white dark:bg-white dark:text-black rounded-xl p-2 cursor-pointer"><FaFilePdf size={17} />Resume</button>
+              <button className="resume-btn flex items-center gap-2 rounded-xl p-2 cursor-pointer"><FaFilePdf size={17} />Resume</button>
             </a>
           </Tooltip>
           <Tooltip content={

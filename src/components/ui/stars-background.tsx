@@ -1,12 +1,7 @@
 "use client";
 
 import { cn } from "@/lib/utils";
-import React, {
-  useState,
-  useEffect,
-  useRef,
-  useCallback,
-} from "react";
+import React, { useState, useEffect, useRef, useCallback } from "react";
 import type { RefObject } from "react";
 
 interface StarProps {
@@ -18,7 +13,7 @@ interface StarProps {
 }
 
 interface StarBackgroundProps {
-  starDensity?: number,
+  starDensity?: number;
   allStarsTwinkle?: boolean;
   twinkleProbability?: number;
   minTwinkleSpeed?: number;
@@ -102,16 +97,7 @@ export const StarsBackground: React.FC<StarBackgroundProps> = ({
   ]);
 
   useEffect(() => {
-
-    const media = window.matchMedia("(prefers-color-scheme: dark)");
-
-    let isDarkMode = media.matches;
-
-    const onThemeChange = (e: MediaQueryListEvent) => {
-      isDarkMode = e.matches;
-    };
-
-    media.addEventListener("change", onThemeChange); const canvas = canvasRef.current;
+    const canvas = canvasRef.current;
 
     if (!canvas) return;
 
@@ -125,8 +111,10 @@ export const StarsBackground: React.FC<StarBackgroundProps> = ({
       stars.forEach((star) => {
         ctx.beginPath();
         ctx.arc(star.x, star.y, star.radius, 0, Math.PI * 2);
-        const color = isDarkMode ? `rgba(255, 255, 255, ${star.opacity})` : `rgba(0, 0, 0 ${star.opacity})`;
-        ctx.fillStyle = color;
+        const baseColor = getComputedStyle(canvas)
+          .getPropertyValue("--star-color")
+          .trim();
+        ctx.fillStyle = `rgba(${baseColor}, ${star.opacity})`;
         ctx.fill();
 
         if (star.twinkleSpeed !== null) {
@@ -149,7 +137,10 @@ export const StarsBackground: React.FC<StarBackgroundProps> = ({
   return (
     <canvas
       ref={canvasRef}
-      className={cn("h-[200vh] w-full absolute inset-0 -z-50", className)}
+      className={cn(
+        "stars-bg-canvas h-[200vh] w-full absolute inset-0 -z-50",
+        className
+      )}
     />
   );
 };
